@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * @author sunwj
  */
-@FeignClient(name = "service-producer")
+@FeignClient(name = "service-producer",fallback = HelloRemoteHystrix.class)
 public interface HelloRemote {
 
     @GetMapping("/hello/")
